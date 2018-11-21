@@ -1,0 +1,23 @@
+<!--dialog/dialog.wxml-->
+<view  animation="{{animationData}}"  hidden="{{!isShow}}"  class='modal'>
+    
+    <view  data-type="mask"  catchtap='hideModal' class='modal-mask' ></view>
+
+    <view  class='modal-layer  modal-layer-radius {{modalSize == "sm" ? " modal-layer-sm" : " modal-layer-md" }} ' >
+
+         <!-- 头部 -->
+        <view class='modal-header'>        
+            <text>{{title}}</text>        
+        </view>
+
+        <!-- 内容区域 -->
+        <view class='modal-body'>         
+            <slot></slot>                          
+        </view>
+        <view class='modal-footer'>
+            <text catchtap='_cancelModal' class='btn btn-default'>{{cancelText}}</text>
+            <text catchtap='_confirmModal'  class='btn btn-primary'>{{confirmText}}</text>                         
+        </view>
+    </view>
+</view>
+

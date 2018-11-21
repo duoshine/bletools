@@ -1,0 +1,103 @@
+/* dialog/dialog.wxss */
+/** 模态 **/
+.modal{
+    position: fixed;
+    top: 0rpx;
+    left: 0rpx;
+    right: 0rpx;
+    bottom: 0rpx;
+    width: 100%;
+    height: 100%; 
+    z-index: 100;
+  }
+  
+  .modal-mask{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 97;
+    background-color: rgba(0,0,0,0.30);
+  }
+  
+  
+  .modal-layer-sm{
+     width: 60%; 
+     transform : translate3d(-50%,-50%,0);
+     left : 50%;  
+  } 
+  
+  .modal-layer-md{
+     width: 80%; 
+     transform : translate3d(-50%,-50%,0);
+     left : 50%;    
+  } 
+  
+  .modal-layer-full{
+     width: 100%; 
+     left: 0;  
+  } 
+  
+  
+  .modal-layer{
+    position: absolute;
+    background: transparent;
+    top: 50%;    
+    display: flex;
+    flex-direction: column;
+    z-index: 98;   
+    box-shadow: 0 4rpx 14rpx rgba(0,0,0,.4); 
+  }
+  
+  .modal-header{
+    background: #fff;
+    color:  #333;
+    padding: 20rpx;
+    font-size: 30rpx;
+    text-align: center;
+    border-top-left-radius: 10rpx;
+    border-top-right-radius: 10rpx;  
+ }
+
+  .modal-body{
+    flex:  1;  
+    padding: 0 40px 40rpx;
+    background: #ffffff;  
+  }
+
+  
+
+.modal-footer{
+    background: #ffffff;
+    flex-direction: row;
+    display: flex;
+    align-items: center;
+    width: 100%;  
+    border-top : 1rpx solid #eee;   
+    border-bottom-left-radius: 10rpx;
+    border-bottom-right-radius: 10rpx;  
+}
+
+.modal-close{
+    color: #fff;
+    font-size: 48rpx;
+    position: absolute;
+    right: 40rpx;
+    top: 0;
+    z-index: 98;
+}
+
+
+.btn{ 
+  flex: 1; 
+  text-align: center;   
+  font-size: 30rpx;
+  color:#666;
+  padding:  19rpx 5rpx;
+}
+.btn:first-child{
+    border-right: 1px solid #eee;
+}
+.btn-primary{
+  color: #009887;   
+}
+

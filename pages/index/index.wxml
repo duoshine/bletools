@@ -1,0 +1,4 @@
+<!--index.wxml-->
+<view>
+    <button bindtap='startBle' type='primary' size='mini' class='nextBtn'>下一步</button>
+</view>

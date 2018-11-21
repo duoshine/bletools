@@ -1,0 +1,17 @@
+/* pages/ble/ble.wxss */
+.resetKey,.testbtn{
+  margin: 20rpx;
+}
+.ble-list {
+  display: flex;
+  flex-direction: column;
+  padding: 40rpx;
+}
+.ble-item {
+  margin: 10rpx;
+}
+.deviceId{
+  font-size: 15rpx;
+  color: red;
+}
+
