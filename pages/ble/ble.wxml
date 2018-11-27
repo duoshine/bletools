@@ -4,7 +4,6 @@
   <button class='startScanBle' bindtap='startScanBle' type='default' size='default'>点击扫描设备</button>
 
   <button class='resetKey' bindtap='resetKey' type='primary' size='default'>测试发送数据</button>
-  <button class='testbtn' bindtap='getDevice' type='primary' size='default'>获取所有已发现的设备</button>
 </view>
  <!-- 自定义dialog组件 -->
   <dialog id="modal"

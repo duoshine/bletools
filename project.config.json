@@ -13,8 +13,8 @@
 	},
 	"compileType": "miniprogram",
 	"libVersion": "2.4.0",
-	"appid": "wxe4d819b973b7a2d1",
-	"projectname": "bleTools",
+	"appid": "",
+	"projectname": "ble_tools_new",
 	"debugOptions": {
 		"hidedInDevtools": []
 	},
