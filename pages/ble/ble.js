@@ -18,7 +18,6 @@ Page({
    */
   resetKey: function() {
    bletools.write(constants.testData1)
-   
   },
 
   /**

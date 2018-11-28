@@ -17,9 +17,9 @@ module.exports = {
   'SCANED': '已停止扫描',
   'ALARM_TITLE': '告警提示',
   // uuid config
-  'SERUUID': 'F000C0e0-0451-4000-B000-000000000000',
-  'NOTIFYUUID': 'F000C0E1-0451-4000-B000-000000000000',
-  'WRITEUUID': 'F000C0E2-0451-4000-B000-000000000000',
+  'SERUUID': '0000C000-0000-0000-B000-000000000000',
+  'NOTIFYUUID': '0000C000-0000-0000-B000-000000000000',
+  'WRITEUUID': '0000C000-0000-0000-B000-000000000000',
   //test data config
   'testData1': [0x01, 0x00, 0xff],
   // var config
@@ -41,26 +41,6 @@ module.exports = {
   'CONNECTTIME': 5000,
   'SCANTIME': 5000,
 }
-/**
- * 微信小程序ble模块封装成工具类(附源码)
- * 前言：使用极其简单,改下uuid就可以通信了,下面我简单介绍一下如何调用,不管你是使用我的代码,还是移植到自己的代码中都很简单,源码飞机票
- * 
- * public方法就这几个,每个调用我都演示一下,当然也可以直接看我代码 都有注释
- *  
- * 
- * 
- * 另外需要实现这些方法
- *  writeListener
- *  notifyListener
- *  bleStateListener
- * 下面对这三个方法解释一下
- * writeListener:是写数据至蓝牙设备写入成功的回调 
- *   看下代码
- * notifyListener:是收到蓝牙设备返回数据的回调
- *   看下代码
- * bleStateListener:是所有交互过程中的状态监听回调
- *   看下代码
- * 
- */
+
 
 
