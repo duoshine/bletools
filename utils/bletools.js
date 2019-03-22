@@ -191,10 +191,12 @@ function _getCharacteristic(deviceId, services) {
       var characteristicsArray = res.characteristics
       for (var i = 0; i < characteristicsArray.length; i++) {
         var characteristics = characteristicsArray[i].uuid
+        //这里有两种情况 1.同一个uuid具备写和通知通过 2.通知和写是两个uuid
         if (constants.NOTIFYUUID.toUpperCase() === characteristics) {
           console.log('查找通知服务成功')
           constants.NOTIFYUUID = characteristics
-        } else if (constants.WRITEUUID.toUpperCase() === characteristics) {
+        }
+        if (constants.WRITEUUID.toUpperCase() === characteristics) {
           console.log('查找写服务成功')
           constants.WRITEUUID = characteristics
         }
