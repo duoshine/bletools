@@ -17,7 +17,7 @@ Page({
    * 发送数据
    */
   resetKey: function() {
-   bletools.write(constants.testData1)
+    bletools.write(constants.testData1)
   },
 
   /**
@@ -26,7 +26,7 @@ Page({
   startScanBle() {
     var tempArray = []
     bletools.startScanBle({
-      success:device => {
+      success: device => {
         tempArray = this.data.bleItem
         tempArray.push(device)
         this.setData({
@@ -69,7 +69,7 @@ Page({
     bletools.clear();
   },
 
-  
+
   onLoad: function() {
     //这个是我显示设备的dialog  用户如果不用dialog的话 不用写
     this.Modal = this.selectComponent("#modal")
@@ -134,10 +134,13 @@ Page({
         showModal(constants.NOT_BLE)
         break;
       case constants.STATE_NOTBLE_WCHAT_VERSION: //微信版本过低 不支持ble
-       showModal(constants.NOT_PERMISSION2)
+        showModal(constants.NOT_PERMISSION2)
         break;
       case constants.STATE_NOTBLE_SYSTEM_VERSION: //系统版本过低 不支持ble
-       showModal(constants.NOT_PERMISSION1)
+        showModal(constants.NOT_PERMISSION1)
+        break;
+      case constants.STATE_INIT_SUCCESS: //初始化蓝牙适配器成功
+        console.log('初始化蓝牙适配器成功')
         break;
     }
   },

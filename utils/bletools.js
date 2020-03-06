@@ -97,20 +97,22 @@ function _initBleTools() {
   wx.openBluetoothAdapter({
     success: function(res) {
       console.log("初始化蓝牙适配器成功")
+      //监听蓝牙适配器状态变化事件
+      wx.onBluetoothAdapterStateChange(res => {
+        if (res.discovering) {
+          _this.bleStateListener(constants.STATE_SCANNING)
+        } else {
+          _this.bleStateListener(constants.STATE_SCANNED)
+        }
+      })
+      //在后面的版本中我发现外部调用没有一个好的位置让调用者能够自动的发起扫描 添加这个方法就是让调用者在初始化适配器之后自动开启扫描
+      _this.bleStateListener(constants.STATE_INIT_SUCCESS)
     },
     fail: function(err) {
       //在用户蓝牙开关未开启或者手机不支持蓝牙功能的情况下，调用 wx.openBluetoothAdapter 会返回错误（errCode=10001），表示手机蓝牙功能不可用
       if (err.errCode == 10001) {
         _this.bleStateListener(constants.STATE_CLOSE_BLE)
       }
-    }
-  })
-  //监听蓝牙适配器状态变化事件
-  wx.onBluetoothAdapterStateChange(res => {
-    if (res.discovering) {
-      _this.bleStateListener(constants.STATE_SCANNING)
-    } else {
-      _this.bleStateListener(constants.STATE_SCANNED)
     }
   })
 }

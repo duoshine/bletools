@@ -34,6 +34,7 @@ module.exports = {
   'STATE_CLOSE_BLE': 9,
   'STATE_NOTBLE_SYSTEM_VERSION': 10,
   'STATE_NOTBLE_WCHAT_VERSION': 11,
+  'STATE_INIT_SUCCESS': 12,
   // match config
   'CONDITION1': 'TK',
   'CONDITION2': 'HO',

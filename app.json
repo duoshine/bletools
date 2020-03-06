@@ -1,5 +1,6 @@
 {
   "pages": [
+    "pages/login/login",
     "pages/index/index",
     "pages/ble/ble"
   ],
@@ -8,5 +9,24 @@
     "navigationBarBackgroundColor": "#fff",
     "navigationBarTitleText": "duo_shine",
     "navigationBarTextStyle": "black"
-  }
+  },
+
+ 
+    "tabBar": {
+      "list": [
+        {
+          "text": "设备",
+          "pagePath": "pages/login/login"
+        },
+        {
+          "text": "我的",
+          "pagePath": "pages/index/index"
+        },
+        {
+          "text": "Tab1",
+          "pagePath": "pages/ble/ble"
+        }
+      ]
+    }
+ 
 }
