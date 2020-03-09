@@ -2,7 +2,7 @@ var bletools = require('../../utils/bletools.js');
 var constants = require('../../utils/constants.js');
 // pages/ble/ble.js
 
-Page({
+Page({  
   /**
    * 页面的初始数据  由于是变量配置在config中不方便更新ui 所以只能放在data中了 导致有一些侵入了 非我的本意 有瑕疵... 其余常量配置在constants.js中了
    * bleItem 存放扫描到的设备

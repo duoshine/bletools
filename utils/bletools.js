@@ -231,15 +231,10 @@ function _startNotifyListener(deviceId) {
 //监听低功耗蓝牙设备的特征值变化。必须先启用 notifyBLECharacteristicValueChange 接口才能接收到设备推送的 notification。
 function _onNotifyListener() {
   wx.onBLECharacteristicValueChange(res => {
-    //转换数据
-    let buffer = res.value
-    let dataView = new DataView(buffer)
-    let dataResult = []
-    for (let i = 0; i < dataView.byteLength; i++) {
-      dataResult.push(dataView.getUint8(i).toString(16))
-    }
-    const result = dataResult
-    _this.notifyListener(result)
+	//转换数据
+    var buffer = res.value
+    var dataResult = new Uint8Array(buffer)
+    _this.notifyListener(dataResult)
   })
 }
 
