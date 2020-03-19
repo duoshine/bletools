@@ -132,7 +132,7 @@ function connectBle(device) {
   _this.bleStateListener(constants.STATE_CONNECTING)
   wx.createBLEConnection({
     deviceId: deviceId,
-    timeOut: constants.CONNECTTIME,
+    timeout: constants.CONNECTTIME,
     fail: err => {
       _this.bleStateListener(constants.STATE_CONNECTING_ERROR)
       //蓝牙已经断开连接了  那么当前连接设备要取消掉
