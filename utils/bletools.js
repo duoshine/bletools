@@ -279,7 +279,7 @@ function initBle(that) {
 /**
  * 判断微信客户端是否支持使用蓝牙API
  */
-function _checkPermission(platform, version, tempSystem) {
+function _checkPermission(platform, version, tempSystem) {     
   if (platform === 'android') {
     //android 4.3才开始支持ble Android 8.0.0
     var systemVersion = tempSystem.substring(8, tempSystem.length)
