@@ -283,9 +283,9 @@ function _checkPermission(platform, version, tempSystem) {
   if (platform === 'android') {
     //android 4.3才开始支持ble Android 8.0.0
     var systemVersion = tempSystem.substring(8, tempSystem.length)
-    if (systemVersion >= '4.3.0') {
+    if (_compareVersion(systemVersion, '4.3.0')) {
       //系统支持
-      if (version >= '6.5.7') {
+      if (_compareVersion(version, '6.5.7')) {
         //支持ble 初始化蓝牙适配器
         _initBleTools()
       } else{
@@ -297,7 +297,7 @@ function _checkPermission(platform, version, tempSystem) {
       _this.bleStateListener(constants.STATE_NOTBLE_SYSTEM_VERSION)
     }
   } else if (platform === 'ios') {
-    if (version >= '6.5.6') {
+    if (_compareVersion(version, '6.5.6')) {
       //支持ble 初始化蓝牙适配器
       _initBleTools()
     }else{
@@ -308,6 +308,35 @@ function _checkPermission(platform, version, tempSystem) {
     console.log('未知系统 请自行探索')
   }
 }
+
+/**
+ * 版本号比较
+ * compareVersion('1.11.0', '1.9.9') // true
+ */
+function _compareVersion(v1, v2) {
+  v1 = v1.split('.')
+  v2 = v2.split('.')
+  const len = Math.max(v1.length, v2.length)
+
+  while (v1.length < len) {
+    v1.push('0')
+  }
+  while (v2.length < len) {
+    v2.push('0')
+  }
+
+  for (let i = 0; i < len; i++) {
+    const num1 = parseInt(v1[i])
+    const num2 = parseInt(v2[i])
+    if (num1 > num2) {
+      return true
+    } else if (num1 < num2) {
+      return false
+    }
+  }
+  return false
+}
+
 /**
  * 断开当前连接
  */
